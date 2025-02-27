@@ -8,13 +8,22 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   compatibilityDate: '2024-04-03',
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+  },
   content: {
+    documentDriven: true,
     preview: {
       api: 'https://api.nuxt.studio',
+      port: 3000,
+      host: '0.0.0.0',
+      dev: true,
     },
-    documentDriven: true,
     renderer: {
       anchorLinks: false,
     },
+  
   },
+  
 })

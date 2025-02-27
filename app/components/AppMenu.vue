@@ -1,15 +1,15 @@
-<script setup>
+<script setup lang="ts">
 const config = useAppConfig()
 </script>
 
 <template>
-  <nav>
+  <nav v-if="config.navigation?.length" class="flex gap-4 p-4">
     <NuxtLink 
-      v-for="item in config.navigation" 
-      :key="item.path"
-      :to="item.path"
+      v-for="link in config.navigation" 
+      :key="link.to"
+      :to="link.to"
     >
-      {{ item.title }}
+      {{ link.title }}
     </NuxtLink>
   </nav>
 </template> 

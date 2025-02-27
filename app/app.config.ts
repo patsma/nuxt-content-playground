@@ -1,6 +1,6 @@
 export default defineAppConfig({
   navigation: [
-    { title: 'Home', path: '/' },
-    { title: 'About', path: '/about' }
+    { title: 'Home', to: '/' },
+    { title: 'About', to: '/about' }
   ]
 }) 

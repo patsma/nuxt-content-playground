@@ -11,15 +11,11 @@ if (!page.value) {
 </script>
 
 <template>
-    <div class="grid">
-      <div class="text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus suscipit laborum perferendis consequatur quidem amet, deserunt nesciunt soluta explicabo. Eius tempore eaque, obcaecati adipisci necessitatibus enim temporibus alias cum ducimus.
-      </div>
-      <AppMenu />
-        <ContentRenderer
+  <div class="grid">
+    <AppMenu />
+    <ContentRenderer
       v-if="page"
       :value="page"
-        />
-    </div>
-
+    />
+  </div>
 </template>

@@ -7,6 +7,12 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+  routeRules: {
+    '/': { prerender: true },
+    '/**': {
+      prerender: true,
+    },
+  },
   compatibilityDate: '2024-04-03',
   devServer: {
     host: '0.0.0.0',

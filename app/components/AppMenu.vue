@@ -1,14 +1,13 @@
-<script setup lang="ts">
-const { menu } = useAppConfig()
+<script setup>
+const config = useAppConfig()
 </script>
 
 <template>
-  <nav v-if="menu?.items?.length" class="flex gap-4 py-4">
+  <nav>
     <NuxtLink 
-      v-for="(item, index) in menu.items" 
-      :key="index"
+      v-for="item in config.navigation" 
+      :key="item.path"
       :to="item.path"
-      class="text-gray-900 hover:text-primary transition-colors"
     >
       {{ item.title }}
     </NuxtLink>

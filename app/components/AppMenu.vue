@@ -1,15 +1,19 @@
 <script setup lang="ts">
-const config = useAppConfig()
+const { data: nav } = await useAsyncData('navigation', () => 
+  queryContent('navigation').findOne()
+)
 </script>
 
 <template>
-  <nav v-if="config.navigation?.length" class="flex gap-4 p-4">
-    <NuxtLink 
-      v-for="link in config.navigation" 
-      :key="link.to"
-      :to="link.to"
+  <nav v-if="nav?.items?.length" class="flex gap-4">
+    <NuxtLink
+      v-for="item in nav.items"
+      :key="item.to"
+      :to="item.to"
+      class="flex items-center gap-1 hover:text-primary"
     >
-      {{ link.title }}
+
+      {{ item.title }}
     </NuxtLink>
   </nav>
 </template> 

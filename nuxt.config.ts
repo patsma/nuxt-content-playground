@@ -32,6 +32,6 @@ export default defineNuxtConfig({
     renderer: {
       anchorLinks: false,
     },
-    ignores: ['navigation.json']
+    ignores: []
   },
 })

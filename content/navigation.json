@@ -1,6 +1,4 @@
-{
-  "items": [
-    { "title": "Home", "to": "/", "icon": "i-heroicons-home" },
-    { "title": "About", "to": "/about", "icon": "i-heroicons-information-circle" }
-  ]
-} 
+[
+  { "title": "Home", "to": "/" },
+  { "title": "About", "to": "/about" }
+] 

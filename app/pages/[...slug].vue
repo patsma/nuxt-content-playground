@@ -12,7 +12,6 @@ if (!page.value) {
 
 <template>
   <div class="grid">
-    <AppMenu />
     <ContentRenderer
       v-if="page"
       :value="page"

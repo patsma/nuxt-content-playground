@@ -9,12 +9,14 @@ export default defineContentConfig({
     navigation: defineCollection({
       type: 'data',
       source: 'navigation.json',
-      schema: z.array(
-        z.object({
-          title: z.string(),
-          to: z.string()
-        })
-      )
+      schema: z.object({
+        items: z.array(
+          z.object({
+            title: z.string(),
+            to: z.string()
+          })
+        )
+      })
     })
   },
 })

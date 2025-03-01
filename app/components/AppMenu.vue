@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const { data: nav } = await useAsyncData('navigation', () => 
-  queryCollection('navigation').all()
+  queryCollection('navigation').first()
 )
 </script>
 
 <template>
-  <nav v-if="nav?.length" class="flex gap-4">
+  <nav v-if="nav?.items?.length" class="flex gap-4">
     <NuxtLink
-      v-for="item in nav"
+      v-for="item in nav.items"
       :key="item.to"
       :to="item.to"
       class="hover:text-primary"

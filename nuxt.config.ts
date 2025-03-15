@@ -32,5 +32,7 @@ export default defineNuxtConfig({
     renderer: {
       anchorLinks: false,
     },
+    ignores: [],
+    appConfig: true,
   },
 })

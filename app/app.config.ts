@@ -1,6 +1,6 @@
 export default defineAppConfig({
-  navigation: [
-    { title: 'Home', to: '/' },
-    { title: 'About', to: '/about' }
-  ]
+  navigation: {
+    // This is a placeholder that will be overridden by content module?
+    items: []
+  }
 }) 

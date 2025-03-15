@@ -1,27 +1,33 @@
-import { field } from '@nuxt/content/preview'
+import { field, group } from '@nuxt/content/preview'
 
 export default defineNuxtSchema({
   appConfig: {
-    navigation: field({
-      type: 'array',
+    navigation: group({
       title: 'Navigation',
-      description: 'Site navigation links',
-      default: [],
-      items: {
-        type: 'object',
-        properties: {
-          title: {
-            type: 'string',
-            title: 'Link Text',
-            default: ''
-          },
-          to: {
-            type: 'string',
-            title: 'URL Path',
-            default: '/'
+      description: 'Site navigation configuration',
+      icon: 'i-heroicons-bars-3-bottom-left',
+      fields: {
+        items: field({
+          type: 'array',
+          title: 'Menu Items',
+          description: 'Navigation links displayed in header',
+          default: [],
+          items: {
+            type: 'object',
+            properties: {
+              title: field({
+                type: 'string',
+                title: 'Link Text',
+                default: ''
+              }),
+              to: field({
+                type: 'string', 
+                title: 'URL Path',
+                default: '/'
+              })
+            }
           }
-        },
-        required: ['title', 'to']
+        })
       }
     })
   }

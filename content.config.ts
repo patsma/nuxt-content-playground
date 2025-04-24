@@ -10,14 +10,18 @@ export default defineContentConfig({
       type: 'data',
       source: 'navigation',
       schema: z.object({
+        id: z.string(),
+        stem: z.string(),
+        extension: z.enum(['md', 'yaml', 'yml', 'json', 'csv', 'xml']),
+        meta: z.record(z.any()),
         items: z.array(
           z.object({
             title: z.string()
-              .describe('The text that will be displayed in the menu')
-              .min(1, 'Title cannot be empty'),
+              .min(1)
+              .describe('The text that will be displayed in the menu'),
             to: z.string()
-              .describe('The URL or path this menu item links to')
-              .min(1, 'URL cannot be empty'),
+              .min(1)
+              .describe('The URL or path this menu item links to'),
             icon: z.string()
               .optional()
               .describe('Optional icon name for the menu item')
@@ -26,10 +30,11 @@ export default defineContentConfig({
               .default('_self')
               .describe('Where to open the link (_self = same window, _blank = new window)')
           })
+          .strict()
         )
         .default([])
         .describe('List of navigation menu items')
-      })
+      }).strict()
     })
   }
 })

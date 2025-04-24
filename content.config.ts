@@ -8,7 +8,7 @@ export default defineContentConfig({
     }),
     navigation: defineCollection({
       type: 'data',
-      source: 'navigation.json',
+      source: 'content/navigation1.json',
       schema: z.object({
         items: z.array(
           z.object({

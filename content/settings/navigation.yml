@@ -1,0 +1,20 @@
+primary:
+  - label: Home
+    href: /
+    icon: i-lucide-home
+  - label: Articles
+    href: /blog
+    icon: i-lucide-file-text
+    children:
+      - label: Latest Posts
+        href: /blog/latest
+        icon: i-lucide-clock
+      - label: Categories
+        href: /blog/categories
+        icon: i-lucide-tag
+  - label: Documentation
+    href: /docs
+    icon: i-lucide-book-open
+  - label: About
+    href: /about
+    icon: i-lucide-info 

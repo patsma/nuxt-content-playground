@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxt/ui'
   ],
   devtools: { enabled: true },
   future: {
@@ -24,6 +25,12 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true
+    },
+    collections: {
+      enabled: true
     }
   },
+  ui: {
+    icons: ['lucide']
+  }
 })

@@ -1,7 +1,11 @@
 <template>
-  <div class="app-layout">
-    <Navigation class="app-nav" />
-    <main class="app-main">
+  <div class="min-h-screen bg-gray-50">
+    <header class="border-b bg-white">
+      <div class="container mx-auto px-4 py-4">
+        <AppNavigation />
+      </div>
+    </header>
+    <main class="container mx-auto px-4 py-8">
       <NuxtPage />
     </main>
   </div>

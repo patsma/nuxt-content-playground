@@ -1,5 +1,17 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
+// Define navigation item schema
+const navigationItemSchema = z.object({
+  title: z
+    .string()
+    .min(1)
+    .describe('Menu item text'),
+  to: z
+    .string()
+    .min(1)
+    .describe('Menu item URL (e.g., /about)')
+})
+
 export default defineContentConfig({
   collections: {
     content: defineCollection({
@@ -10,16 +22,9 @@ export default defineContentConfig({
       type: 'data',
       source: 'navigation',
       schema: z.object({
-        items: z.array(
-          z.object({
-            title: z.string()
-              .min(1)
-              .describe('Menu item text'),
-            to: z.string()
-              .min(1)
-              .describe('Menu item URL')
-          }).required()
-        ).describe('Navigation Menu Items')
+        items: z
+          .array(navigationItemSchema)
+          .describe('Navigation Menu Items')
       }).strict()
     })
   }

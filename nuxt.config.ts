@@ -19,7 +19,6 @@ export default defineNuxtConfig({
     port: 3000,
   },
   content: {
-    documentDriven: true,
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true,
@@ -32,7 +31,5 @@ export default defineNuxtConfig({
     renderer: {
       anchorLinks: false,
     },
-    ignores: [],
-    appConfig: true,
   },
 })

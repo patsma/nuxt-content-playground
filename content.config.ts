@@ -13,7 +13,15 @@ export default defineContentConfig({
         items: z.array(
           z.object({
             title: z.string(),
-            to: z.string()
+            to: z.string(),
+            icon: z.string().optional(),
+            children: z.array(
+              z.object({
+                title: z.string(),
+                to: z.string(),
+                icon: z.string().optional()
+              })
+            ).optional()
           })
         )
       })

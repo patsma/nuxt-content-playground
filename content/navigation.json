@@ -1,6 +1,26 @@
 {
   "items": [
-    { "title": "Homeeeeeee", "to": "/" },
-    { "title": "Abouteee", "to": "/about" }
+    {
+      "title": "Home",
+      "to": "/",
+      "icon": "i-mdi-home"
+    },
+    {
+      "title": "Products",
+      "to": "/products",
+      "icon": "i-mdi-shopping",
+      "children": [
+        {
+          "title": "New Arrivals",
+          "to": "/products/new",
+          "icon": "i-mdi-new-box"
+        },
+        {
+          "title": "Featured",
+          "to": "/products/featured",
+          "icon": "i-mdi-star"
+        }
+      ]
+    }
   ]
 } 

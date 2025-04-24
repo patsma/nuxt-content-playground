@@ -8,8 +8,21 @@ const navigationItemSchema = z.object({
     .describe('Menu item text'),
   to: z
     .string()
-    .min(1)
-    .describe('Menu item URL (e.g., /about)')
+    .optional()
+    .describe('Menu item URL'),
+  children: z
+    .array(z.object({
+      title: z
+        .string()
+        .min(1)
+        .describe('Submenu item text'),
+      to: z
+        .string()
+        .min(1)
+        .describe('Submenu item URL')
+    }))
+    .optional()
+    .describe('Submenu items')
 })
 
 export default defineContentConfig({
@@ -20,7 +33,7 @@ export default defineContentConfig({
     }),
     navigation: defineCollection({
       type: 'data',
-      source: 'navigation',
+      source: 'content/navigation/**/*.yaml',
       schema: z.object({
         items: z
           .array(navigationItemSchema)

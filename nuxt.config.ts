@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/content',
+    '@nuxt/content'
   ],
   devtools: { enabled: true },
   future: {
@@ -12,6 +12,8 @@ export default defineNuxtConfig({
     '/**': {
       prerender: true,
     },
+    '/__preview/**': { cors: true },
+    '/__studio/**': { cors: true }
   },
   compatibilityDate: '2024-04-03',
   devServer: {
@@ -22,9 +24,6 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
       dev: true
-    },
-    renderer: {
-      anchorLinks: false,
-    },
+    }
   },
 })

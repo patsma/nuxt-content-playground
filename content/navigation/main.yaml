@@ -1,0 +1,15 @@
+items:
+  - title: Home
+    to: /
+  - title: Documentation
+    children:
+      - title: Getting Started
+        to: /docs/getting-started
+      - title: Features
+        to: /docs/features
+  - title: Examples
+    children:
+      - title: Basic Example
+        to: /examples/basic
+      - title: Advanced Example
+        to: /examples/advanced 

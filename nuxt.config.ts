@@ -21,12 +21,7 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
-      dev: true,
-      gitInfo: {
-        name: 'nuxt-content-playground',
-        owner: 'patsma',
-        url: 'https://github.com/patsma/nuxt-content-playground'
-      }
+      dev: true
     },
     renderer: {
       anchorLinks: false,
